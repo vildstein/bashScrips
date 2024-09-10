@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 #SNAP
 sudo apt update
 sudo apt install snapd
@@ -27,15 +28,11 @@ sudo apt-get install build-essential libgl1-mesa-dev openssl -y libssl-dev
 sudo apt install mc
 #Tilix TMux
 sudo apt install tilix tmux
-
 #For google CHROME
 sudo apt install libu2f-udev
 
-
 #Qt5
-sudo apt install build-essential libgl1-mesa-dev
-sudo apt-get install libfontconfig1
-sudo apt-get install mesa-common-dev
+sudo apt install build-essential libgl1-mesa-dev libfontconfig1 mesa-common-dev
 sudo apt-get install libglu1-mesa-dev -y
 sudo apt-get install qt5-default
 sudo apt install -y qtcreator qtbase5-dev qt5-qmake qt5-doc qt5-doc-html qtbase5-doc-html qtbase5-examples qtdeclarative5-examples #cmake
@@ -49,14 +46,41 @@ sudo apt install qt6-base-dev qt6-base-private-dev qt6-declarative-dev qt6-decla
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 
 #Ninja
-sudo apt install ninja-build 
+sudo apt install ninja-build
 #Git
 sudo apt install git
 
+curDir=$(pwd)
+
+#CMAKE
+wget https://github.com/Kitware/CMake/releases/download/v3.30.3/cmake-3.30.3.tar.gz
+tar xzvpf cmake-3.30.3.tar.gz
+cd cmake-3.30.3
+./bootstrap && make && sudo make install
+make clean
+cd $curDir
+rm -rf cmake-3.30.3
+
+#Python
+
+#Go
+
+
 #OpenVpn
-sudo apt install libnl-genl-3-dev libnl-3-dev libcap-ng-dev python3-lzo liblzo2-dev libpam0g-dev 
+sudo apt install libnl-genl-3-dev libnl-3-dev libcap-ng-dev python3-lzo liblzo2-dev libpam0g-dev
+wget https://swupdate.openvpn.org/community/releases/openvpn-2.6.12.tar.gz
+tar -xvzf openvpn-2.6.12.tar.gz
+cd openvpn-2.6.12
+./configure
+make
+sudo make install
+make clean
+cd $curDir
+rm -rf openvpn-2.6.12
 
 #FINISH
 sudo apt update
 sudo apt upgrade
 sudo reboot
+
+#END
