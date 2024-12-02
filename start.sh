@@ -44,7 +44,7 @@ sudo apt-get install qtquickcontrols2-5-dev
 
 #Qt6
 sudo apt install qt6-base-dev qt6-base-private-dev qt6-declarative-dev qt6-declarative-private-dev qt6-tools-dev qt6-tools-private-dev qt6-scxml-dev qt6-documentation-tools libqt6core5compat6-dev qt6-tools-dev-tools qt6-l10n-tools qt6-shader-baker libqt6shadertools6-dev qt6-quick3d-dev qt6-quick3d-dev-tools libqt6svg6-dev libqt6quicktimeline6-dev libqt6serialport6-dev
-
+sudo apt install sudo apt install qml-qt6
 
 #LLVM Latest
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
